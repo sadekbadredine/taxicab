@@ -1,0 +1,76 @@
+<h2 fxLayout="column" fxLayoutAlign="center center" mat-dialog-title>
+  {{ titleAction }} Customer
+</h2>
+<section>
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="5px"
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)"
+  >
+    <mat-form-field appearance="outline">
+      <input
+        type="text"
+        matInput
+        placeholder="Name"
+        ngModel
+        name="name"
+        required
+        #nameInput="ngModel"
+        [(ngModel)]="data.name"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        type="text"
+        matInput
+        placeholder="Country"
+        ngModel
+        name="country"
+        required
+        #countryInput="ngModel"
+        [(ngModel)]="data.address.country"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        type="text"
+        matInput
+        placeholder="City Address"
+        ngModel
+        name="city"
+        required
+        #cityInput="ngModel"
+        [(ngModel)]="data.address.city"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        type="text"
+        matInput
+        placeholder="Street Address"
+        ngModel
+        name="street"
+        required
+        #streetInput="ngModel"
+        [(ngModel)]="data.address.street"
+      />
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="form.invalid"
+      >
+        Submit
+      </button>
+      <button mat-button [mat-dialog-close] color="warn">Cancel</button>
+    </div>
+  </form>
+</section>

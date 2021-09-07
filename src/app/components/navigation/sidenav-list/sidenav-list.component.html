@@ -1,0 +1,18 @@
+<mat-nav-list>
+  <a (click)="onCloseSideNav()" mat-list-item routerLink="/">
+    <mat-icon>home</mat-icon>
+    <span class="nav-caption">Home</span></a
+  >
+  <a (click)="onCloseSideNav()" mat-list-item routerLink="/cabs">
+    <mat-icon> local_taxi</mat-icon>
+    <span class="nav-caption">Cabs</span></a
+  >
+  <a (click)="onCloseSideNav()" mat-list-item routerLink="/customers"
+    ><mat-icon>people</mat-icon><span class="nav-caption">Customers</span></a
+  >
+  <mat-list-item (click)="onCloseSideNav()" (click)="onLogout()">
+    <button mat-icon-button>
+      <mat-icon>eject</mat-icon> <span class="nav-caption">Logout</span>
+    </button>
+  </mat-list-item>
+</mat-nav-list>

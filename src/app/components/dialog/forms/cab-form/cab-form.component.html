@@ -1,0 +1,63 @@
+<h2 fxLayout="column" fxLayoutAlign="center center" mat-dialog-title>
+  {{ titleAction }} Cab
+</h2>
+<section>
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="5px"
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)"
+  >
+    <mat-form-field appearance="outline">
+      <input
+        type="text"
+        matInput
+        placeholder="Owner Name"
+        ngModel
+        name="owner"
+        required
+        #ownerInput="ngModel"
+        [(ngModel)]="data.owner"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        type="text"
+        matInput
+        placeholder="Car Model"
+        ngModel
+        name="model"
+        required
+        #modelInput="ngModel"
+        [(ngModel)]="data.model"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <input
+        type="text"
+        matInput
+        placeholder="Car Number"
+        ngModel
+        name="number"
+        required
+        #numberInput="ngModel"
+        [(ngModel)]="data.number"
+      />
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="form.invalid"
+      >
+        Submit
+      </button>
+      <button mat-button [mat-dialog-close] color="warn">Cancel</button>
+    </div>
+  </form>
+</section>

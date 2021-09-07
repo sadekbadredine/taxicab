@@ -1,0 +1,70 @@
+<section>
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    #form="ngForm"
+    (ngSubmit)="onSubmit(form)"
+  >
+    <mat-form-field appearance="outline">
+      <input
+        type="email"
+        matInput
+        placeholder="Your email"
+        ngModel
+        name="email"
+        email
+        required
+        #emailInput="ngModel"
+      />
+      <mat-error *ngIf="emailInput.hasError('email')"
+        >E-Mail is invalid</mat-error
+      >
+      <mat-error *ngIf="emailInput.hasError('required')"
+        >Field must not be empty</mat-error
+      >
+    </mat-form-field>
+    <mat-form-field
+      hintLabel="Should be at least 6 characters long"
+      appearance="outline"
+    >
+      <input
+        type="password"
+        matInput
+        placeholder="Your password"
+        ngModel
+        name="password"
+        minlength="6"
+        required
+        #passwordInput="ngModel"
+      />
+      <mat-error *ngIf="passwordInput.hasError('required')"
+        >Field must not be empty</mat-error
+      >
+      <mat-hint align="end">{{ passwordInput.value?.length }} / 6</mat-hint>
+    </mat-form-field>
+    <re-captcha
+      (resolved)="resolved($event)"
+      siteKey="6Lf1rk4cAAAAAB9g9ew246Bhe1BQlelmqJM6P06k"
+    ></re-captcha>
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary"
+      [disabled]="form.invalid"
+    >
+      {{ isLoginMode ? "Log In" : "Sign Up" }}
+    </button>
+  </form>
+  <div
+    style="margin-top: 20px"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+  >
+    <span>{{ isLoginMode ? "Not a member?" : "Already a Member" }}</span>
+    <button mat-raised-button color="accent" (click)="switchAuthMode()">
+      {{ isLoginMode ? "Sign Up" : "Log In" }}
+    </button>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+mat-paginator {
+  padding: 0px 30px;
+}
+
+table {
+  padding: 30px;
+  width: 100%;
+  td,
+  th {
+    text-align: center;
+  }
+}
+.table-row {
+  cursor: pointer;
+}
+.table-row:hover {
+  background-color: rgba(141, 141, 141, 0.09);
+}
+
+mat-form-field {
+  width: 165px;
+  font-size: 12px;
+}

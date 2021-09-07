@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="app-toolbar">
+  <div>
+    <button mat-icon-button (click)="onToggleSideNav()" *ngIf="isAuthorized">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div><a routerLink="/">Taxi Operator</a></div>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs *ngIf="isAuthorized">
+    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+      <li>
+        <a routerLink="/customers">Customers</a>
+      </li>
+      <li>
+        <a routerLink="/cabs">Cabs</a>
+      </li>
+      <li style="cursor: pointer">
+        <a (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

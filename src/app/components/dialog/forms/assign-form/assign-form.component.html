@@ -1,0 +1,33 @@
+<section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="40px">
+  <mat-form-field appearance="outline">
+    <mat-select
+      (selectionChange)="selectCab($event.value)"
+      placeholder="Select a cab"
+    >
+      <mat-select-filter
+        [array]="availableCabs"
+        (filteredReturn)="filteredCabsList = $event"
+      ></mat-select-filter>
+      <mat-option *ngFor="let item of filteredCabsList" [value]="item">
+        {{ item }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-select
+      (selectionChange)="selectCustomer($event.value)"
+      placeholder="Select a Customer"
+    >
+      <mat-select-filter
+        [array]="customerList"
+        (filteredReturn)="filteredCustomerList = $event"
+      ></mat-select-filter>
+      <mat-option *ngFor="let item of filteredCustomerList" [value]="item">
+        {{ item }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button (click)="assignDriverToCustomer()" color="primary">
+    Assign
+  </button>
+</section>

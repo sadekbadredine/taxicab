@@ -1,0 +1,57 @@
+<div
+  class="welcome"
+  fxLayout="row"
+  fxLayout.lt-sm="column"
+  fxLayout.sm-md="row"
+  fxLayoutAlign.lt-sm="start center"
+  fxLayoutAlign="center center"
+>
+  <!-- Cabs -->
+  <section>
+    <h1>CABS</h1>
+    <mat-card class="example-card">
+      <mat-card-content>
+        <mat-icon> local_taxi</mat-icon>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="createCab()">
+          Create
+        </button>
+        <button mat-raised-button color="Accent" [routerLink]="['cabs']">
+          View
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+  <!-- Assign -->
+  <section>
+    <h1>ASSIGN</h1>
+    <mat-card class="example-card">
+      <mat-card-content>
+        <mat-icon>assignment</mat-icon>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="assignDriver()">
+          Assign
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+  <!-- Customers -->
+  <section>
+    <h1>CUSTOMERS</h1>
+    <mat-card class="example-card">
+      <mat-card-content>
+        <mat-icon>people</mat-icon>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="createCustomer()">
+          Create
+        </button>
+        <button mat-raised-button color="Accent" [routerLink]="['customers']">
+          View
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+</div>
